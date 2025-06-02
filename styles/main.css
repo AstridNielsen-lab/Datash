@@ -203,6 +203,7 @@ img {
     max-width: 1400px;
     margin: 0 auto;
     margin-bottom: var(--spacing-xl);
+    z-index: 1;
 }
 
 .section-container::before {
@@ -237,6 +238,7 @@ img {
     margin-bottom: var(--spacing-lg);
     position: relative;
     box-shadow: 0 0 20px rgba(0, 229, 255, 0.05);
+    z-index: 2;
 }
 
 .content-box-title {
@@ -268,6 +270,7 @@ img {
     padding: var(--spacing-md);
     margin-bottom: var(--spacing-md);
     position: relative;
+    z-index: 3;
 }
 
 .nested-box::before {
