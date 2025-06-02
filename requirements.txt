@@ -1,0 +1,25 @@
+# Core dependencies
+typer>=0.9.0,<0.10.0        # CLI interface
+rich>=13.0.0,<14.0.0        # Rich text formatting
+prompt_toolkit>=3.0.36,<4.0.0  # Interactive shell
+requests>=2.28.0,<3.0.0     # HTTP requests for API
+python-dotenv>=1.0.0,<2.0.0 # Environment variables
+
+# Interactive shell components
+pygments>=2.13.0,<3.0.0     # Syntax highlighting
+
+# Database support
+# sqlite3                   # Built into Python
+mysql-connector-python>=8.3.0,<9.0.0  # MySQL support
+psycopg2-binary>=2.9.6,<3.0.0         # PostgreSQL support
+pymongo>=4.4.0,<5.0.0                 # MongoDB support
+
+# Development dependencies
+black>=23.3.0               # Code formatting
+mypy>=1.3.0                 # Type checking
+pytest>=7.3.1               # Testing
+
+# Optional dependencies
+pandas>=2.0.0,<3.0.0        # Data manipulation
+matplotlib>=3.7.1,<4.0.0    # Data visualization
+tabulate>=0.9.0,<1.0.0      # Table formatting
