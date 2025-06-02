@@ -12,9 +12,9 @@ document.addEventListener('DOMContentLoaded', function() {
             setTimeout(function() {
                 splashScreen.remove();
                 document.body.style.overflow = ''; // Restore scrolling
-            }, 3000); // 3 seconds to ensure animation has completed
+            }, 8000); // 8 seconds to ensure animation is highly visible
         }
-    }, 100);
+    }, 1000); // 1 second delay before animation starts
 
     // Rest of the site initialization code goes here
     // ...
@@ -197,15 +197,15 @@ function initAnimations() {
             }
         });
     }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+        threshold: 0.2, /* Increased from 0.1 to 0.2 to trigger earlier */
+        rootMargin: '0px 0px -100px 0px' /* Increased from -50px to -100px */
     });
     
     // Observe elements with animation classes
     document.querySelectorAll('.animate-in, .feature-card, .download-card, .faq-item').forEach(el => {
         el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        el.style.transform = 'translateY(30px)'; /* Increased from 20px to 30px */
+        el.style.transition = 'opacity 1.5s ease, transform 1.5s ease'; /* Increased from 0.5s to 1.5s */
         observer.observe(el);
     });
     
@@ -215,7 +215,7 @@ function initAnimations() {
         items.forEach((item, index) => {
             item.style.opacity = '0';
             item.style.transform = 'translateY(20px)';
-            item.style.transition = `opacity 0.5s ease ${index * 0.1}s, transform 0.5s ease ${index * 0.1}s`;
+            item.style.transition = `opacity 1.5s ease ${index * 0.3}s, transform 1.5s ease ${index * 0.3}s`; /* Increased duration and delay */
             observer.observe(item);
         });
     });
@@ -233,7 +233,7 @@ function initParallaxEffects() {
         const mouseY = e.clientY / window.innerHeight;
         
         parallaxElements.forEach(el => {
-            const speed = el.getAttribute('data-speed') || 0.05;
+            const speed = el.getAttribute('data-speed') || 0.15; /* Increased from 0.05 to 0.15 */
             const x = (mouseX - 0.5) * speed * 100;
             const y = (mouseY - 0.5) * speed * 100;
             
@@ -246,7 +246,7 @@ function initParallaxEffects() {
     if (hologram) {
         window.addEventListener('scroll', () => {
             const scrollY = window.scrollY;
-            hologram.style.transform = `translateY(${scrollY * 0.05}px) rotate(${scrollY * 0.02}deg)`;
+            hologram.style.transform = `translateY(${scrollY * 0.15}px) rotate(${scrollY * 0.05}deg)`; /* Tripled the effect */
         });
     }
 }
@@ -284,7 +284,7 @@ function initGlitchEffects() {
                 randomEl.classList.remove('hard-glitch');
             }, 200);
         }
-    }, 5000);
+    }, 3000); /* More frequent: changed from 5000ms to 3000ms */
 }
 
 /**

@@ -119,9 +119,9 @@
     --spacing-xxl: 3rem;
 
     /* Animation */
-    --transition-fast: 0.2s;
-    --transition-medium: 0.3s;
-    --transition-slow: 0.5s;
+    --transition-fast: 0.8s;
+    --transition-medium: 1.2s;
+    --transition-slow: 2s;
 }
 
 /* ===== RESET & BASE STYLES ===== */
@@ -214,7 +214,8 @@ img {
     width: 100%;
     height: 2px;
     background: linear-gradient(90deg, transparent, var(--neon-blue), transparent);
-    animation: scan-horizontal 4s ease-in-out infinite;
+    animation: scan-horizontal 8s ease-in-out infinite;
+    box-shadow: 0 0 15px var(--neon-blue); /* Added more prominent glow */
 }
 
 .section-container::after {
@@ -225,7 +226,8 @@ img {
     width: 2px;
     height: 100%;
     background: linear-gradient(180deg, transparent, var(--neon-purple), transparent);
-    animation: scan-vertical 4s ease-in-out infinite;
+    animation: scan-vertical 8s ease-in-out infinite;
+    box-shadow: 0 0 15px var(--neon-purple); /* Added more prominent glow */
 }
 
 .content-box {
@@ -302,7 +304,15 @@ img {
     height: 20px;
     border-color: var(--neon-blue);
     border-style: solid;
-    opacity: 0.7;
+    opacity: 0.9; /* Increased from 0.7 to 0.9 */
+    animation: corner-pulse 4s ease-in-out infinite; /* Added pulsing animation */
+    box-shadow: 0 0 10px var(--neon-blue); /* Added glow effect */
+}
+
+@keyframes corner-pulse {
+    0% { box-shadow: 0 0 5px var(--neon-blue); opacity: 0.7; }
+    50% { box-shadow: 0 0 15px var(--neon-blue); opacity: 1; }
+    100% { box-shadow: 0 0 5px var(--neon-blue); opacity: 0.7; }
 }
 
 .box-corner-tl {
@@ -340,11 +350,18 @@ img {
     width: 100%;
     height: 100%;
     background-image: 
-        linear-gradient(to right, rgba(0, 229, 255, 0.05) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(0, 229, 255, 0.05) 1px, transparent 1px);
+        linear-gradient(to right, rgba(0, 229, 255, 0.1) 1px, transparent 1px), /* Increased opacity */
+        linear-gradient(to bottom, rgba(0, 229, 255, 0.1) 1px, transparent 1px);
     background-size: 20px 20px;
     pointer-events: none;
     z-index: -1;
+    animation: grid-fade 6s ease-in-out infinite; /* Added animation */
+}
+
+@keyframes grid-fade {
+    0% { opacity: 0.3; }
+    50% { opacity: 0.9; }
+    100% { opacity: 0.3; }
 }
 
 .scanner-line {
@@ -354,25 +371,36 @@ img {
     width: 100%;
     height: 2px;
     background: linear-gradient(90deg, transparent, var(--neon-blue), transparent);
-    opacity: 0.5;
-    animation: scan-down 4s linear infinite;
+    opacity: 0.8; /* Increased opacity for better visibility */
+    animation: scan-down 8s linear infinite;
+    box-shadow: 0 0 20px var(--neon-blue); /* Added stronger glow effect */
     z-index: 1;
     pointer-events: none;
 }
 
 @keyframes scan-down {
-    0% { top: 0; }
-    100% { top: 100%; }
+    0% { top: -5%; opacity: 0.5; }
+    5% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { top: 105%; opacity: 0.5; }
 }
 
 @keyframes scan-horizontal {
-    0%, 100% { transform: translateX(-100%); }
-    50% { transform: translateX(100%); }
+    0% { transform: translateX(-100%); opacity: 0.3; }
+    10% { opacity: 1; }
+    40% { transform: translateX(100%); opacity: 1; }
+    50% { transform: translateX(100%); opacity: 0.3; }
+    60% { opacity: 0.3; }
+    100% { transform: translateX(-100%); opacity: 0.3; }
 }
 
 @keyframes scan-vertical {
-    0%, 100% { transform: translateY(-100%); }
-    50% { transform: translateY(100%); }
+    0% { transform: translateY(-100%); opacity: 0.3; }
+    10% { opacity: 1; }
+    40% { transform: translateY(100%); opacity: 1; }
+    50% { transform: translateY(100%); opacity: 0.3; }
+    60% { opacity: 0.3; }
+    100% { transform: translateY(-100%); opacity: 0.3; }
 }
 
 section {
@@ -433,13 +461,13 @@ section {
     top: -100%;
     left: 0;
     width: 100%;
-    height: 4px;
+    height: 8px; /* Increased from 4px to 8px */
     background: var(--neon-blue);
-    box-shadow: 0 0 10px var(--glow-blue);
-    opacity: 0.7;
+    box-shadow: 0 0 20px var(--glow-blue); /* Increased glow */
+    opacity: 0.9; /* Increased from 0.7 to 0.9 */
     z-index: 1000;
     pointer-events: none;
-    animation: scan 8s linear infinite;
+    animation: scan 12s linear infinite; /* Increased from 8s to 12s */
 }
 
 /* Glassmorphism Card Base */
@@ -699,7 +727,7 @@ nav {
     background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><path fill="%2300e5ff" d="M139.4 21.25c14.13 8.15 24.76 19.8 32.32 34.36 7.56 14.56 12.05 32.02 11.67 49.95-.37 17.93-5.6 36.32-16.44 50.91-10.85 14.6-27.32 25.39-45.28 27.46-17.95 2.07-37.4-4.59-52.48-16.37-15.07-11.79-25.79-28.7-30.04-46.5-4.26-17.79-2.07-36.47 6.69-51.98 8.77-15.5 24.1-27.83 41.87-32.74 17.77-4.91 37.98-2.4 52.68 5.9Z"/></svg>') center/contain no-repeat;
     filter: blur(20px);
     opacity: 0.2;
-    animation: pulse 4s ease-in-out infinite alternate;
+    animation: pulse 8s ease-in-out infinite alternate; /* Increased from 4s to 8s */
 }
 
 .hologram-rings {
@@ -720,7 +748,7 @@ nav {
     height: 50%;
     top: 25%;
     left: 25%;
-    animation: rotate 20s linear infinite;
+    animation: rotate 40s linear infinite; /* Slowed down from 20s to 40s */
 }
 
 .ring2 {
@@ -730,7 +758,7 @@ nav {
     left: 15%;
     border-color: var(--neon-purple);
     box-shadow: 0 0 15px var(--glow-purple);
-    animation: rotate 15s linear infinite reverse;
+    animation: rotate 30s linear infinite reverse; /* Slowed down from 15s to 30s */
 }
 
 .ring3 {
@@ -739,7 +767,7 @@ nav {
     top: 5%;
     left: 5%;
     border-style: dashed;
-    animation: rotate 25s linear infinite;
+    animation: rotate 50s linear infinite; /* Slowed down from 25s to 50s */
 }
 
 .hero-features {
@@ -761,9 +789,10 @@ nav {
 }
 
 .feature-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 20px var(--glow-blue);
+    transform: translateY(-10px); /* Increased from -5px to -10px */
+    box-shadow: 0 0 30px var(--glow-blue); /* Increased glow effect */
     background: rgba(12, 18, 32, 0.8);
+    transition: all 0.8s ease 0.3s; /* Increased duration and added delay */
 }
 
 .feature-icon {
@@ -926,8 +955,9 @@ nav {
 }
 
 .download-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 25px rgba(0, 229, 255, 0.2);
+    transform: translateY(-10px); /* Increased from -5px to -10px */
+    box-shadow: 0 0 40px rgba(0, 229, 255, 0.4); /* Increased glow intensity */
+    transition: all 0.8s ease 0.3s; /* Increased duration and added delay */
 }
 
 .download-card::before {
@@ -938,8 +968,8 @@ nav {
     width: 200%;
     height: 200%;
     background: conic-gradient(transparent, var(--neon-blue), transparent 30%);
-    opacity: 0.05;
-    animation: rotate 20s linear infinite;
+    opacity: 0.2; /* Increased from 0.05 to 0.2 */
+    animation: rotate 40s linear infinite; /* Slowed down from 20s to 40s */
 }
 
 .version-badge {
