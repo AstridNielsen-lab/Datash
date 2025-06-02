@@ -92,7 +92,24 @@ Litecoin: ltc1qxytts52mykr2u83x6ghwllmu7d524ltt702mcc
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
+## Founder & CTO
+
+**Julio Campos Machado**  
+Full Stack Developer & CTO at Like Look Solutions
+
+### Contact Information
+- **WhatsApp**: +55 11 97060-3441 (24/7)
+- **Email**: juliocamposmachado@gmail.com
+
+### Company
+- **Like Look Solutions**
+- **Website**: [https://likelook.wixsite.com/solutions](https://likelook.wixsite.com/solutions)
+- **Facebook**: [likelooksolutionsti](https://www.facebook.com/likelooksolutionsti/)
+- **LinkedIn**: [juliocamposmachado](https://www.linkedin.com/in/juliocamposmachado/)
+
+### Additional Links
+- **Linktree**: [juliocamposmachado](https://linktr.ee/juliocamposmachado)
+
 ## Contact
 
 Project maintained by Astrid Nielsen - [GitHub Profile](https://github.com/AstridNielsen-lab)
-
