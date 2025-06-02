@@ -80,6 +80,14 @@ A pre-built Windows executable is available in the `dist` folder of the reposito
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
+## 💰 Como Contribuir
+Qualquer valor doado ajuda a educar novos desenvolvedores em tecnologia!
+
+PIX/PayPal: radiotatuapefm@gmail.com
+Bitcoin: bc1qmjf00jqttk2kgemxtxh0hv4xp8fqztnn23cuc2
+Ethereum: 0x7481B4591e7f0DFAD23b884E78C46F0c207a3E35
+Litecoin: ltc1qxytts52mykr2u83x6ghwllmu7d524ltt702mcc
+
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
