@@ -28,6 +28,11 @@ from rich.syntax import Syntax
 from rich.prompt import Prompt, Confirm
 from rich.highlighter import ReprHighlighter
 from rich.theme import Theme
+from rich.live import Live
+from rich.text import Text
+from rich.align import Align
+from rich.style import Style as RichStyle
+from rich.color import Color
 from rich import box
 
 # Prompt toolkit for interactive shell
@@ -124,6 +129,261 @@ def setup_history_file() -> Path:
     return history_file
 
 
+class AnimatedCatSpiderWeb:
+    """Class to display an animated ASCII art of a cat playing with spider webs."""
+    
+    def __init__(self, console: Console):
+        """
+        Initialize the animation.
+        
+        Args:
+            console: The Rich console to display on
+        """
+        self.console = console
+        self.frames = self._get_animation_frames()
+        
+    def _get_animation_frames(self) -> List[str]:
+        """
+        Get the animation frames.
+        
+        Returns:
+            List of animation frames as strings
+        """
+        # Frame 1: Cat approaching the spider web
+        frame1 = r"""
+          /\_/\           ╭─────────╮
+         ( o.o )          │ ╲     / │
+          > ^ <           │  ╲   /  │
+                          │   ╲ /   │
+                          │   / ╲   │
+                          │  /   ╲  │
+                          │ /     ╲ │
+                          ╰─────────╯
+        """
+        
+        # Frame 2: Cat touching the web
+        frame2 = r"""
+                          ╭─────────╮
+          /\_/\           │ ╲     / │
+         ( o.o )~         │  ╲   /  │
+          > ^ <           │   ╲ /   │
+                          │   / ╲   │
+                          │  /   ╲  │
+                          │ /     ╲ │
+                          ╰─────────╯
+        """
+        
+        # Frame 3: Cat's paw caught in web
+        frame3 = r"""
+                          ╭─────────╮
+          /\_/\           │ ╲     / │
+         ( o.o )~~~~~~~~~>│  ╲   /  │
+          > ^ <           │   ╲ /   │
+                          │   / ╲   │
+                          │  /   ╲  │
+                          │ /     ╲ │
+                          ╰─────────╯
+        """
+        
+        # Frame 4: Cat playing with web
+        frame4 = r"""
+                          ╭─────────╮
+          /\_/\           │ ╲     / │
+         ( o~o )~~~~~~~~~>│  ╲   /  │
+          > ^ <           │   ╲ /   │
+                          │   / ╲   │
+                          │  /   ╲  │
+                          │ /     ╲ │
+                          ╰─────────╯
+        """
+        
+        # Frame 5: Web starting to unravel
+        frame5 = r"""
+                          ╭────────╮
+          /\_/\           │ ╲     /
+         ( o~o )~~~~~~~~~>│  ╲   / │
+          > ^ <           │   ╲ /  │
+                          │   / ╲  │
+                          │  /   ╲ │
+                          │ /     ╲│
+                          ╰────────╯
+        """
+        
+        # Frame 6: Web more unraveled
+        frame6 = r"""
+                          ╭───────
+          /\_/\           │ ╲     
+         ( ^.^ )~~~~~~~~~>│  ╲    │
+          > ^ <           │   ╲   │
+                          │    ╲  │
+                          │     ╲ │
+                          │      ╲│
+                          ╰───────╯
+        """
+        
+        # Frame 7: Web mostly gone
+        frame7 = r"""
+                          ╭──
+          /\_/\           │   
+         ( ^.^ )~~~~~o    │    
+          > ^ <           │     
+                          │      
+                          │       
+                          │        
+                          ╰──
+        """
+        
+        # Frame 8: Cat happy with the ball of web
+        frame8 = r"""
+        
+          /\_/\              
+         ( ^.^ )  ~~o~~      
+          > ^ <              
+                            
+        ★ ★ ★  DATASH!  ★ ★ ★
+                            
+        """
+        
+        return [frame1, frame2, frame3, frame4, frame5, frame6, frame7, frame8]
+        
+    def play(self, duration: float = 0.6, cycles: int = 1):
+        """
+        Play the animation.
+        
+        Args:
+            duration: Time between frames in seconds
+            cycles: Number of animation cycles
+        """
+        try:
+            # Prepare console
+            self._prepare_console()
+            
+            # Show loading message
+            self.console.print("[bold magenta]Loading Datash...[/bold magenta]")
+            time.sleep(0.5)  # Brief pause before animation
+            
+            # Try to use Rich's Live display first (preferred method)
+            try:
+                with Live(self._render_frame(0), console=self.console, refresh_per_second=4, screen=True) as live:
+                    for cycle in range(cycles):
+                        for i, frame in enumerate(self.frames):
+                            live.update(self._render_frame(i))
+                            time.sleep(duration)
+                    
+                    # Pause on the last frame for a moment
+                    time.sleep(0.7)
+            except Exception as inner_e:
+                # Fallback to simpler animation method
+                logger.warning(f"Using fallback animation method: {str(inner_e)}")
+                self._play_fallback(duration, cycles)
+                
+        except Exception as e:
+            # Log the error but continue execution
+            logger.error(f"Animation error: {str(e)}", exc_info=True if logger.level <= logging.DEBUG else False)
+            # Don't let animation errors prevent the app from starting
+            pass
+    
+    def _prepare_console(self):
+        """Prepare the console for animation display."""
+        # Clear the console first
+        try:
+            self.console.clear()
+        except Exception:
+            # Fallback to os.system clear if console.clear() fails
+            if platform.system() == "Windows":
+                os.system("cls")
+            else:
+                os.system("clear")
+        
+        # Windows specific console mode
+        if platform.system() == "Windows":
+            try:
+                # Try to enable VT100 sequences on Windows
+                import ctypes
+                kernel32 = ctypes.windll.kernel32
+                kernel32.SetConsoleMode(kernel32.GetStdHandle(-11), 7)
+            except Exception:
+                # If it fails, continue anyway
+                pass
+    
+    def _play_fallback(self, duration: float, cycles: int):
+        """Fallback animation method for terminals that don't support Rich's Live display."""
+        for cycle in range(cycles):
+            for i, frame in enumerate(self.frames):
+                # Clear screen before each frame
+                try:
+                    self.console.clear()
+                except Exception:
+                    # Fallback clear
+                    if platform.system() == "Windows":
+                        os.system("cls")
+                    else:
+                        os.system("clear")
+                        
+                # Print the frame
+                panel = self._render_frame(i)
+                self.console.print(panel)
+                time.sleep(duration)
+    
+    def _render_frame(self, frame_index: int) -> Panel:
+        """
+        Render a specific animation frame.
+        
+        Args:
+            frame_index: Index of the frame to render
+            
+        Returns:
+            Panel containing the rendered frame
+        """
+        frame = self.frames[frame_index]
+        
+        # Style the cat, web, and text differently
+        styled_frame = frame
+        
+        # Create a richly styled text object
+        text = Text()
+        
+        # Apply different styles to different parts of the frame
+        for line in styled_frame.split('\n'):
+            # Cat styling - using hardcoded pattern matching to avoid escape sequence issues
+            if '/\\' in line or '(' in line or ')' in line or '>' in line:
+                # Cat face patterns
+                cat_line = line
+                if '/\\_/\\' in line:
+                    cat_line = cat_line.replace('/\\_/\\', '[bold yellow]/\\_/\\[/bold yellow]')
+                cat_line = cat_line.replace('( o.o )', '[bold yellow]([/bold yellow][bright_white] o.o [/bright_white][bold yellow])[/bold yellow]')
+                cat_line = cat_line.replace('( o~o )', '[bold yellow]([/bold yellow][bright_white] o~o [/bright_white][bold yellow])[/bold yellow]')
+                cat_line = cat_line.replace('( ^.^ )', '[bold yellow]([/bold yellow][bright_white] ^.^ [/bright_white][bold yellow])[/bold yellow]')
+                cat_line = cat_line.replace('> ^ <', '[bold yellow]> ^ <[/bold yellow]')
+                cat_line = cat_line.replace('~', '[bright_cyan]~[/bright_cyan]')
+                cat_line = cat_line.replace('~~o~~', '[bright_cyan]~~[/bright_cyan][bright_white]o[/bright_white][bright_cyan]~~[/bright_cyan]')
+                text.append(cat_line + '\n')
+            # Web styling
+            elif any(web_part in line for web_part in ['╭', '╮', '│', '╯', '╰', '/']):
+                web_line = line
+                for char in ['╭', '╮', '│', '╯', '╰', '\\', '/', '─', '╲', '╱']:
+                    web_line = web_line.replace(char, f'[bright_white]{char}[/bright_white]')
+                text.append(web_line + '\n')
+            # DATASH styling
+            elif 'DATASH' in line:
+                text.append('[bold bright_green]' + line + '[/bold bright_green]\n')
+            # Stars styling
+            elif '★' in line:
+                text.append('[bold bright_yellow]' + line + '[/bold bright_yellow]\n')
+            # Default styling
+            else:
+                text.append(line + '\n')
+        
+        return Panel(
+            Align.center(text),
+            title="[bold bright_magenta]Cat vs Spider Web[/bold bright_magenta]",
+            title_align="center",
+            border_style="bright_blue",
+            padding=(1, 2),
+            width=60
+        )
+
+
 def initialize_app_state(debug: bool = False) -> Dict[str, Any]:
     """Initialize the application state."""
     # Start with base state
@@ -145,13 +405,63 @@ def initialize_app_state(debug: bool = False) -> Dict[str, Any]:
     return state
 
 
+def display_welcome_animation():
+    """Display the welcome animation of a cat playing with spider webs."""
+    try:
+        # Clear the console first for a clean animation
+        try:
+            console.clear()
+        except Exception:
+            # Fallback to os.system clear
+            if platform.system() == "Windows":
+                os.system("cls")
+            else:
+                os.system("clear")
+        
+        # Create and play the animation
+        animation = AnimatedCatSpiderWeb(console)
+        animation.play(duration=0.6, cycles=1)
+        
+        # Wait a moment before clearing
+        time.sleep(0.3)
+        
+        # Clear the screen before showing the welcome message
+        try:
+            console.clear()
+        except Exception:
+            # Fallback to os.system clear
+            if platform.system() == "Windows":
+                os.system("cls")
+            else:
+                os.system("clear")
+        
+    except Exception as e:
+        # Log the error but continue without the animation
+        logger.error(f"Animation error: {str(e)}")
+        # Clear any partial animation
+        if platform.system() == "Windows":
+            os.system("cls")
+        else:
+            os.system("clear")
+
+
 def display_welcome_message():
     """Display the welcome message for Datash."""
+    try:
+        # Show the welcome animation first
+        display_welcome_animation()
+    except Exception as e:
+        # If animation fails, just clear the screen
+        logger.error(f"Welcome animation failed: {str(e)}")
+        console.clear()
+    
+    # Display the main welcome panel
     console.print(Panel.fit(
         "[bold blue]Datash[/bold blue] - [italic]Data + Shell + Intelligence[/italic]\n\n"
         "An intelligent terminal assistant for programmers.\n"
         "Type [bold]help[/bold] for a list of commands or [bold]exit[/bold] to quit.",
         title="Welcome",
+        title_align="center",
         border_style="blue",
         box=box.ROUNDED,
         padding=(1, 2),
@@ -269,7 +579,7 @@ def _start_interactive_shell(state: Dict[str, Any]):
             complete_while_typing=True,
         )
         
-        # Display welcome message
+        # Display welcome message with animation
         display_welcome_message()
         
         # Main interaction loop
