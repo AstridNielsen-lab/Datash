@@ -5,6 +5,11 @@ Datash - An intelligent terminal assistant for programmers.
 This module serves as the main entry point for the Datash application,
 providing an interactive shell interface for interacting with the assistant.
 
+The AI assistant has expertise in penetration testing (pentest) and security assessments,
+helping users with security testing, providing guidance on secure practices, and
+assisting with technical security analysis. All security testing must be performed
+ethically and only on systems where you have explicit permission.
+
 Developer: Dev Full Stack Julio Campos Machado
 Company: Like Look Solutions
 Website: https://likelook.wixsite.com/solutions
@@ -80,7 +85,7 @@ logger = logging.getLogger("datash")
 
 # Initialize Typer app for CLI arguments
 app = typer.Typer(
-    help="Datash - Data + Shell + Intelligence: A terminal assistant for programmers.",
+    help="Datash - Data + Shell + Intelligence: A terminal assistant for programmers with expertise in pentesting and security assessments.",
     add_completion=True,
 )
 
@@ -680,6 +685,9 @@ def display_welcome_message():
     console.print(Panel.fit(
         "[bold blue]Datash[/bold blue] - [italic]Data + Shell + Intelligence[/italic]\n\n"
         "An intelligent terminal assistant for programmers.\n"
+        "Expert in [bold red]penetration testing[/bold red] and [bold red]security assessments[/bold red].\n"
+        "Assists with security testing, secure practices guidance, and technical analysis.\n"
+        "[italic yellow]Note: All security testing must be ethical and performed only on systems where you have explicit permission.[/italic yellow]\n\n"
         "Type [bold]help[/bold] for a list of commands or [bold]exit[/bold] to quit.",
         title="Welcome",
         title_align="center",
@@ -1059,7 +1067,7 @@ def _handle_command(command: str, state: Dict[str, Any]):
             return
             
         # If not a built-in command, send to Gemini API
-        console.print("[info]Processing with AI...[/info]")
+        console.print("[info]Processing with AI security expert...[/info]")
         
         response = state["gemini_client"].get_response(
             command, 
