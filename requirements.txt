@@ -5,6 +5,10 @@ prompt_toolkit>=3.0.36,<4.0.0  # Interactive shell
 requests>=2.28.0,<3.0.0     # HTTP requests for API
 python-dotenv>=1.0.0,<2.0.0 # Environment variables
 
+# Voice interaction (optional)
+SpeechRecognition>=3.10.0    # Speech recognition
+pyttsx3>=2.90               # Text-to-speech
+PyAudio>=0.2.13             # Audio recording (required by SpeechRecognition)
 # Interactive shell components
 pygments>=2.13.0,<3.0.0     # Syntax highlighting
 

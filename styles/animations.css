@@ -1,0 +1,627 @@
+/* 
+ * Datash - Cyberpunk Theme
+ * Animations Stylesheet
+ * Futuristic animations and effects for a high-tech interface
+ */
+
+/* ===== KEYFRAMES ===== */
+
+/* Glitch Effect */
+@keyframes glitch {
+    0% {
+        transform: translate(0);
+        text-shadow: 0 0 5px var(--glow-blue);
+    }
+    2% {
+        transform: translate(-2px, 0) skew(0deg);
+    }
+    4% {
+        transform: translate(2px, 0) skew(0deg);
+    }
+    5% {
+        transform: translate(-1px, 0) skew(0deg);
+        text-shadow: -2px 0 #ff00c1, 2px 0 #00e5ff;
+    }
+    6% {
+        transform: translate(0, 0) skew(5deg);
+    }
+    7% {
+        transform: translate(0, 0) skew(-5deg);
+    }
+    8% {
+        transform: translate(0, 0) skew(0deg);
+        text-shadow: 0 0 5px var(--glow-blue);
+    }
+    9% {
+        transform: translate(2px, -2px) skew(0deg);
+        text-shadow: -2px 0 #ff00c1, 2px 0 #00e5ff;
+    }
+    11% {
+        transform: translate(0, 0) skew(0deg);
+        text-shadow: 0 0 5px var(--glow-blue);
+    }
+    80% {
+        transform: translate(0, 0) skew(0deg);
+        text-shadow: 0 0 5px var(--glow-blue);
+    }
+    81% {
+        transform: translate(-2px, 0) skew(0deg);
+        text-shadow: -2px 0 #ff00c1, 2px 0 #00e5ff;
+    }
+    82% {
+        transform: translate(0, 0) skew(0deg);
+        text-shadow: 0 0 5px var(--glow-blue);
+    }
+    83% {
+        transform: translate(2px, -2px) skew(0deg);
+        text-shadow: -2px 0 #ff00c1, 2px 0 #00e5ff;
+    }
+    84% {
+        transform: translate(0, 0) skew(0deg);
+        text-shadow: 0 0 5px var(--glow-blue);
+    }
+    85% {
+        transform: translate(2px, 2px) skew(0deg);
+    }
+    86% {
+        transform: translate(-2px, 0) skew(0deg);
+    }
+    87% {
+        transform: translate(0, 0) skew(0deg);
+    }
+    100% {
+        transform: translate(0);
+        text-shadow: 0 0 5px var(--glow-blue);
+    }
+}
+
+/* Hard Glitch Effect - More intense version */
+@keyframes hard-glitch {
+    0% {
+        transform: translate(0);
+    }
+    20% {
+        transform: translate(-5px, 5px);
+    }
+    40% {
+        transform: translate(-5px, -5px);
+    }
+    60% {
+        transform: translate(5px, 5px);
+    }
+    80% {
+        transform: translate(5px, -5px);
+    }
+    100% {
+        transform: translate(0);
+    }
+}
+
+/* Text Glitch Before/After effect */
+@keyframes glitch-before {
+    0% {
+        clip-path: inset(0 0 0 0);
+    }
+    5% {
+        clip-path: inset(0.8em 0 0.4em 0);
+    }
+    10% {
+        clip-path: inset(0.4em 0 0.8em 0);
+    }
+    15% {
+        clip-path: inset(0.1em 0 1em 0);
+    }
+    20% {
+        clip-path: inset(0.3em 0 0.6em 0);
+    }
+    25% {
+        clip-path: inset(0.6em 0 0.3em 0);
+    }
+    30% {
+        clip-path: inset(0.2em 0 0.5em 0);
+    }
+    35% {
+        clip-path: inset(0.5em 0 0.7em 0);
+    }
+    40% {
+        clip-path: inset(0.7em 0 0.2em 0);
+    }
+    45% {
+        clip-path: inset(0.9em 0 0.3em 0);
+    }
+    50% {
+        clip-path: inset(0.3em 0 0.9em 0);
+    }
+    55% {
+        clip-path: inset(0.4em 0 0.5em 0);
+    }
+    60% {
+        clip-path: inset(0.5em 0 0.4em 0);
+    }
+    65% {
+        clip-path: inset(0.6em 0 0.2em 0);
+    }
+    70% {
+        clip-path: inset(0.2em 0 0.6em 0);
+    }
+    75% {
+        clip-path: inset(0.7em 0 0.1em 0);
+    }
+    80% {
+        clip-path: inset(0.1em 0 0.7em 0);
+    }
+    85% {
+        clip-path: inset(0.8em 0 0.2em 0);
+    }
+    90% {
+        clip-path: inset(0.2em 0 0.8em 0);
+    }
+    95% {
+        clip-path: inset(0.9em 0 0.1em 0);
+    }
+    100% {
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+@keyframes glitch-after {
+    0% {
+        clip-path: inset(0 0 0 0);
+    }
+    5% {
+        clip-path: inset(0.4em 0 0.8em 0);
+    }
+    10% {
+        clip-path: inset(0.8em 0 0.4em 0);
+    }
+    15% {
+        clip-path: inset(0.7em 0 0.3em 0);
+    }
+    20% {
+        clip-path: inset(0.3em 0 0.7em 0);
+    }
+    25% {
+        clip-path: inset(0.5em 0 0.5em 0);
+    }
+    30% {
+        clip-path: inset(0.6em 0 0.4em 0);
+    }
+    35% {
+        clip-path: inset(0.4em 0 0.6em 0);
+    }
+    40% {
+        clip-path: inset(0.2em 0 0.8em 0);
+    }
+    45% {
+        clip-path: inset(0.8em 0 0.2em 0);
+    }
+    50% {
+        clip-path: inset(0.1em 0 0.9em 0);
+    }
+    55% {
+        clip-path: inset(0.9em 0 0.1em 0);
+    }
+    60% {
+        clip-path: inset(0.3em 0 0.7em 0);
+    }
+    65% {
+        clip-path: inset(0.7em 0 0.3em 0);
+    }
+    70% {
+        clip-path: inset(0.4em 0 0.6em 0);
+    }
+    75% {
+        clip-path: inset(0.6em 0 0.4em 0);
+    }
+    80% {
+        clip-path: inset(0.5em 0 0.5em 0);
+    }
+    85% {
+        clip-path: inset(0.2em 0 0.8em 0);
+    }
+    90% {
+        clip-path: inset(0.8em 0 0.2em 0);
+    }
+    95% {
+        clip-path: inset(0.1em 0 0.9em 0);
+    }
+    100% {
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+/* Scanning line animation */
+@keyframes scan {
+    0% {
+        top: -100%;
+    }
+    75% {
+        top: 200%;
+    }
+    100% {
+        top: 200%;
+    }
+}
+
+/* Pulse animation for glowing elements */
+@keyframes pulse {
+    0% {
+        opacity: 0.7;
+        box-shadow: 0 0 10px var(--glow-blue);
+    }
+    50% {
+        opacity: 1;
+        box-shadow: 0 0 20px var(--glow-blue);
+    }
+    100% {
+        opacity: 0.7;
+        box-shadow: 0 0 10px var(--glow-blue);
+    }
+}
+
+/* Button glow pulse */
+@keyframes button-glow {
+    0% {
+        box-shadow: 0 0 15px var(--glow-blue);
+    }
+    50% {
+        box-shadow: 0 0 25px var(--glow-blue);
+    }
+    100% {
+        box-shadow: 0 0 15px var(--glow-blue);
+    }
+}
+
+/* Rotate animation for holographic elements */
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Flicker animation for neon text */
+@keyframes flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        text-shadow: 0 0 5px var(--neon-blue), 0 0 10px var(--neon-blue), 0 0 15px var(--neon-blue);
+    }
+    20%, 24%, 55% {
+        text-shadow: none;
+    }
+}
+
+/* Hologram flicker */
+@keyframes hologram-flicker {
+    0%, 100% {
+        opacity: 1;
+    }
+    8%, 10% {
+        opacity: 0.8;
+    }
+    20%, 25%, 30% {
+        opacity: 0.9;
+    }
+    40% {
+        opacity: 0.8;
+    }
+    50%, 60% {
+        opacity: 1;
+    }
+    70%, 75% {
+        opacity: 0.9;
+    }
+    80%, 90% {
+        opacity: 1;
+    }
+}
+
+/* Typing animation for chatbot */
+@keyframes typing {
+    0% {
+        width: 0;
+    }
+    99% {
+        border-right: 1px solid var(--neon-blue);
+    }
+    100% {
+        border-right: none;
+    }
+}
+
+/* Typing cursor animation */
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: var(--neon-blue);
+    }
+}
+
+/* Loading dots animation */
+@keyframes loading-dots {
+    0%, 20% {
+        content: ".";
+    }
+    40% {
+        content: "..";
+    }
+    60%, 100% {
+        content: "...";
+    }
+}
+
+/* Data stream animation for background elements */
+@keyframes data-stream {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0 1000px;
+    }
+}
+
+/* Float animation for UI elements */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Glow animation for borders */
+@keyframes border-glow {
+    0% {
+        border-color: var(--neon-blue);
+        box-shadow: 0 0 10px var(--glow-blue);
+    }
+    50% {
+        border-color: var(--neon-purple);
+        box-shadow: 0 0 20px var(--glow-purple);
+    }
+    100% {
+        border-color: var(--neon-blue);
+        box-shadow: 0 0 10px var(--glow-blue);
+    }
+}
+
+/* ===== APPLIED ANIMATIONS ===== */
+
+/* Glitch Text Effect */
+.glitch-text {
+    position: relative;
+    animation: glitch 5s infinite;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.glitch-text::before {
+    left: 2px;
+    text-shadow: -2px 0 var(--neon-pink);
+    animation: glitch-before 5s infinite linear alternate-reverse;
+}
+
+.glitch-text::after {
+    left: -2px;
+    text-shadow: 2px 0 var(--neon-blue);
+    animation: glitch-after 5s infinite linear alternate-reverse;
+}
+
+/* Flicker Effect for Neon Text */
+.flicker-text {
+    animation: flicker 5s infinite;
+}
+
+/* Pulse Effect for Elements */
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+/* Hover Button Glow */
+.glow-btn:hover {
+    animation: button-glow 1.5s infinite;
+}
+
+/* Rotating Elements */
+.rotate {
+    animation: rotate 10s linear infinite;
+}
+
+.rotate-slow {
+    animation: rotate 20s linear infinite;
+}
+
+.rotate-reverse {
+    animation: rotate 15s linear infinite reverse;
+}
+
+/* Typing Animation */
+.typing {
+    overflow: hidden;
+    border-right: 1px solid var(--neon-blue);
+    white-space: nowrap;
+    margin: 0;
+    animation: 
+        typing 3.5s steps(40, end),
+        blink-caret 0.75s step-end infinite;
+}
+
+/* Loading Indicator */
+.loading::after {
+    content: "";
+    animation: loading-dots 1.5s infinite;
+}
+
+/* Float Animation */
+.float {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Hologram Flicker */
+.hologram {
+    animation: hologram-flicker 8s infinite;
+}
+
+/* Border Glow */
+.border-glow {
+    animation: border-glow 4s infinite;
+}
+
+/* Data Stream Background */
+.data-stream {
+    background-image: linear-gradient(0deg, 
+        rgba(0, 229, 255, 0.05) 25%, 
+        rgba(0, 0, 0, 0) 25%, 
+        rgba(0, 0, 0, 0) 50%, 
+        rgba(0, 229, 255, 0.05) 50%, 
+        rgba(0, 229, 255, 0.05) 75%, 
+        rgba(0, 0, 0, 0) 75%, 
+        rgba(0, 0, 0, 0) 100%);
+    background-size: 10px 20px;
+    animation: data-stream 20s linear infinite;
+}
+
+/* Button Hover Effect */
+.cyber-btn {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.cyber-btn:hover::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+        transparent, 
+        rgba(0, 229, 255, 0.3), 
+        transparent 30%
+    );
+    animation: rotate 4s linear infinite;
+}
+
+/* Typing Indicator for Chat */
+.typing-indicator {
+    display: inline-flex;
+    align-items: center;
+}
+
+.typing-indicator span {
+    height: 8px;
+    width: 8px;
+    margin: 0 2px;
+    background-color: var(--neon-blue);
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.4;
+}
+
+.typing-indicator span:nth-child(1) {
+    animation: pulse 1s infinite 0.1s;
+}
+
+.typing-indicator span:nth-child(2) {
+    animation: pulse 1s infinite 0.3s;
+}
+
+.typing-indicator span:nth-child(3) {
+    animation: pulse 1s infinite 0.5s;
+}
+
+/* Scan lines overlay effect */
+.scan-lines {
+    position: relative;
+    overflow: hidden;
+}
+
+.scan-lines::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        transparent 50%,
+        rgba(0, 229, 255, 0.03) 51%,
+        transparent 52%
+    );
+    background-size: 100% 4px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Page transition effect */
+.page-transition {
+    animation: glitch 0.5s;
+}
+
+/* Hover Effects */
+.hover-glow {
+    transition: all 0.3s ease;
+}
+
+.hover-glow:hover {
+    text-shadow: 0 0 8px var(--glow-blue);
+    color: var(--text-accent);
+}
+
+.hover-scale {
+    transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+    transform: scale(1.05);
+}
+
+.hover-translate {
+    transition: transform 0.3s ease;
+}
+
+.hover-translate:hover {
+    transform: translateY(-5px);
+}
+
+/* Gradient Text Animation */
+.gradient-text {
+    background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple), var(--neon-blue));
+    background-size: 200% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: gradient-shift 5s linear infinite;
+}
+
+@keyframes gradient-shift {
+    0% {
+        background-position: 0% center;
+    }
+    100% {
+        background-position: 200% center;
+    }
+}
+
+/* Parallax Effect for background elements */
+.parallax {
+    transition: transform 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+}
+

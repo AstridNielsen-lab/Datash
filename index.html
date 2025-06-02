@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datash - Cyberpunk Data Tool</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/animations.css">
+    <link rel="stylesheet" href="styles/splash.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Splash Screen -->
+    <div id="splash-screen" class="splash-screen">
+        <div class="splash-hex-grid"></div>
+        <div class="splash-circuit"></div>
+        <div class="splash-content">
+            <div class="splash-logo">
+                <h1 class="splash-title glitch-text" data-text="DATASH">DATASH</h1>
+                <div class="splash-grid"></div>
+            </div>
+            <div class="splash-credits">
+                <p class="developer-credit">Developed by <span class="highlight-name">Julio Campos Machado</span></p>
+                <p class="company-credit flicker-text">Like Look Solutions</p>
+            </div>
+        </div>
+        <div class="splash-scanline"></div>
+    </div>
+    
+    <div class="noise-overlay"></div>
+    <div class="scanner-overlay"></div>
+    
+    <!-- Navigation -->
+    <header>
+        <div class="logo">
+            <h1 class="glitch-text" data-text="DATASH">DATASH</h1>
+            <div class="logo-glow"></div>
+        </div>
+        <nav>
+            <div class="menu-btn">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#downloads" class="nav-link">Downloads</a></li>
+                <li><a href="#faq" class="nav-link">FAQ</a></li>
+                <li><a href="#chat" class="nav-link">AI Chat</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="main-title">WELCOME TO THE <span class="highlight-text">FUTURE</span> OF DATA</h1>
+                    <p class="subtitle">Datash - The cybernetic tool for your data management needs</p>
+                    <div class="cta-buttons">
+                        <a href="#downloads" class="btn primary-btn">
+                            <span class="btn-text">Download Now</span>
+                            <span class="btn-glow"></span>
+                        </a>
+                        <a href="#chat" class="btn secondary-btn">
+                            <span class="btn-text">Talk to AI</span>
+                            <span class="btn-glow"></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="hologram-container">
+                        <div class="hologram-image"></div>
+                        <div class="hologram-rings">
+                            <div class="ring ring1"></div>
+                            <div class="ring ring2"></div>
+                            <div class="ring ring3"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-features">
+                <div class="feature-card">
+                    <i class="fas fa-rocket feature-icon"></i>
+                    <h3>Fast Performance</h3>
+                    <p>Blazing fast data processing</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt feature-icon"></i>
+                    <h3>Secure</h3>
+                    <p>Enterprise-grade security</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-brain feature-icon"></i>
+                    <h3>AI Powered</h3>
+                    <p>Smart data analysis</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Downloads Section -->
+        <section id="downloads" class="downloads-section">
+            <div class="section-header">
+                <h2 class="section-title">DOWNLOADS</h2>
+                <p class="section-subtitle">Get the latest version of Datash for your system</p>
+            </div>
+            <div class="container">
+                <div class="download-cards">
+                    <div class="download-card">
+                        <div class="version-badge">v2.5.0</div>
+                        <h3>Datash Core</h3>
+                        <p>Main Python application file</p>
+                        <ul class="feature-list">
+                            <li>Core Functionality</li>
+                            <li>Command-line Interface</li>
+                            <li>Data Processing Engine</li>
+                            <li>Plugin Support</li>
+                        </ul>
+                        <a href="DatashVersions/Desktop/datash.py" class="download-btn">
+                            <i class="fas fa-download"></i> datash.py (14.5 KB)
+                        </a>
+                        <div class="download-info">Released: June 2, 2025</div>
+                    </div>
+                    <div class="download-card">
+                        <div class="version-badge">v2.5.0</div>
+                        <h3>Database Utilities</h3>
+                        <p>Database integration and management tools</p>
+                        <ul class="feature-list">
+                            <li>Data Connectors</li>
+                            <li>Query Optimization</li>
+                            <li>Schema Management</li>
+                            <li>Backup & Restore</li>
+                        </ul>
+                        <a href="DatashVersions/Desktop/database_utils.zip" class="download-btn">
+                            <i class="fas fa-download"></i> database_utils.zip (55.5 KB)
+                        </a>
+                        <div class="download-info">Released: June 2, 2025</div>
+                    </div>
+                    <div class="download-card">
+                        <div class="version-badge">v2.5.0</div>
+                        <h3>API Client</h3>
+                        <p>External API integration module</p>
+                        <ul class="feature-list">
+                            <li>REST API Support</li>
+                            <li>Authentication</li>
+                            <li>Rate Limiting</li>
+                            <li>Response Caching</li>
+                        </ul>
+                        <a href="DatashVersions/Desktop/api_client.py" class="download-btn">
+                            <i class="fas fa-download"></i> api_client.py (8.9 KB)
+                                         </div>
+                    <div class="download-card">
+                        <div class="version-badge">v2.5.0</div>
+                        <h3>Command Processor</h3>
+                        <p>Advanced command parsing and execution</p>
+                        <ul class="feature-list">
+                            <li>Command Routing</li>
+                            <li>Parameter Validation</li>
+                            <li>Error Handling</li>
+                            <li>Execution Pipeline</li>
+                        </ul>
+                        <a href="DatashVersions/Desktop/command_processor.py" class="download-btn">
+                            <i class="fas fa-download"></i> command_processor.py (35.1 KB)
+                        </a>
+                        <div class="download-info">Released: June 2, 2025</div>
+                    </div>
+                    <div class="download-card">
+                        <div class="version-badge">v2.5.0</div>
+                        <h3>Requirements</h3>
+                        <p>Python dependencies for Datash</p>
+                        <ul class="feature-list">
+                            <li>Required Libraries</li>
+                            <li>Version Specifications</li>
+                            <li>Compatible with pip</li>
+                            <li>Environment Setup</li>
+                        </ul>
+                        <a href="DatashVersions/Desktop/requirements.txt" class="download-btn">
+                            <i class="fas fa-download"></i> requirements.txt (0.9 KB)
+                        </a>
+                        <div class="download-info">Released: June 2, 2025</div>
+                    </div>
+                </div>
+                <div class="system-requirements">
+                    <h3>System Requirements</h3>
+                    <div class="requirements-grid">
+                        <div class="req-item">
+                            <span class="req-label">OS:</span>
+                            <span class="req-value">Windows 10/11, macOS 12+, Linux</span>
+                        </div>
+                        <div class="req-item">
+                            <span class="req-label">CPU:</span>
+                            <span class="req-value">Multi-core processor, 2.0 GHz+</span>
+                        </div>
+                        <div class="req-item">
+                            <span class="req-label">RAM:</span>
+                            <span class="req-value">4 GB minimum, 8 GB recommended</span>
+                        </div>
+                        <div class="req-item">
+                            <span class="req-label">Storage:</span>
+                            <span class="req-value">500 MB free space</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq-section">
+            <div class="section-header">
+                <h2 class="section-title">FREQUENTLY ASKED QUESTIONS</h2>
+                <p class="section-subtitle">Everything you need to know about Datash</p>
+            </div>
+            <div class="container">
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>What is Datash?</h3>
+                            <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Datash is a powerful data management tool designed for processing, analyzing, and visualizing complex datasets. It features AI-powered analytics, secure data handling, and intuitive user interfaces for both technical and non-technical users.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>How do I install Datash?</h3>
+                            <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Download the appropriate version for your operating system from the Downloads section. Run the installer and follow the on-screen instructions. The installation wizard will guide you through the setup process, including selecting installation location and optional components.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Is Datash free to use?</h3>
+                            <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Datash offers both free and premium versions. The free version includes essential features for personal use, while the premium version provides advanced capabilities for professional and enterprise environments, including dedicated support and customization options.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>How does the AI chatbot work?</h3>
+                            <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>The AI chatbot uses advanced language models to understand your questions about Datash and provide helpful responses. It can guide you through features, troubleshoot issues, and suggest best practices for using the tool effectively. The more you interact with it, the better it gets at addressing your specific needs.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Can I use Datash offline?</h3>
+                            <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, Datash works offline for most core functionalities. Some advanced features like cloud synchronization and certain AI capabilities require an internet connection. The offline mode ensures you can continue working with your data regardless of connectivity status.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>How can I report bugs or request features?</h3>
+                            <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>You can report bugs and request features through our GitHub repository or via the feedback form in the application. Our development team actively reviews all submissions and prioritizes them based on user impact and alignment with our product roadmap.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Chat Section -->
+        <section id="chat" class="chat-section">
+            <div class="section-header">
+                <h2 class="section-title">AI ASSISTANT</h2>
+                <p class="section-subtitle">Get help with Datash from our AI guide</p>
+            </div>
+            <div class="container">
+                <div class="chat-container">
+                    <div class="chat-interface">
+                        <div class="chat-header">
+                            <div class="ai-avatar">
+                                <div class="ai-face"></div>
+                            </div>
+                            <div class="chat-info">
+                                <h3>NEXA</h3>
+                                <p>Datash AI Assistant</p>
+                            </div>
+                            <div class="connection-status">
+                                <span class="status-indicator"></span>
+                                <span class="status-text">ONLINE</span>
+                            </div>
+                        </div>
+                        <div class="chat-messages" id="chat-messages">
+                            <div class="message ai-message">
+                                <div class="message-content">
+                                    <p>Hello! I'm NEXA, your Datash AI assistant. How can I help you today?</p>
+                                </div>
+                                <div class="message-time">Now</div>
+                            </div>
+                            <!-- Messages will be added here dynamically -->
+                        </div>
+                        <div class="chat-input-container">
+                            <input type="text" id="chat-input" placeholder="Ask about Datash features, usage, or troubleshooting...">
+                            <button id="send-message" class="send-btn">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="chat-features">
+                        <div class="feature-box">
+                            <h3>What You Can Ask:</h3>
+                            <ul class="chat-suggestion-list">
+                                <li><a href="#" class="chat-suggestion">How do I start using Datash?</a></li>
+                                <li><a href="#" class="chat-suggestion">What data formats are supported?</a></li>
+                                <li><a href="#" class="chat-suggestion">How to connect to databases?</a></li>
+                                <li><a href="#" class="chat-suggestion">Explain the AI analytics feature</a></li>
+                                <li><a href="#" class="chat-suggestion">Troubleshoot installation issues</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h2>DATASH</h2>
+                <p>The Future of Data Management</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>Product</h3>
+                    <ul>
+                        <li><a href="#home">Features</a></li>
+                        <li><a href="#downloads">Downloads</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#">Roadmap</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">API Reference</a></li>
+                        <li><a href="#">Tutorials</a></li>
+                        <li><a href="#">Community</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#contribute">Contribute</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-social">
+                <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-discord"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-reddit"></i></a>
+            </div>
+        </div>
+        <div id="contribute" class="footer-contribute">
+            <div class="contribute-content">
+                <h3>💰 Como Contribuir</h3>
+                <p>Qualquer valor doado ajuda a educar novos desenvolvedores em tecnologia!</p>
+                <div class="donation-methods">
+                    <div class="donation-method">
+                        <span class="donation-type">PIX/PayPal:</span>
+                        <span class="donation-address">radiotatuapefm@gmail.com</span>
+                    </div>
+                    <div class="donation-method">
+                        <span class="donation-type">Bitcoin:</span>
+                        <span class="donation-address">bc1qmjf00jqttk2kgemxtxh0hv4xp8fqztnn23cuc2</span>
+                    </div>
+                    <div class="donation-method">
+                        <span class="donation-type">Ethereum:</span>
+                        <span class="donation-address">0x7481B4591e7f0DFAD23b884E78C46F0c207a3E35</span>
+                    </div>
+                    <div class="donation-method">
+                        <span class="donation-type">Litecoin:</span>
+                        <span class="donation-address">ltc1qxytts52mykr2u83x6ghwllmu7d524ltt702mcc</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Datash. All rights reserved.</p>
+            <div class="footer-legal">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/chatbot.js"></script>
+</body>
+</html>
+
