@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="database_utils">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/DatashVersions/Desktop/database_utils.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
