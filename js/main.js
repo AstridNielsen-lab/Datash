@@ -1,3 +1,25 @@
+// Main JavaScript for Datash Cyberpunk Interface
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize splash screen
+    setTimeout(function() {
+        const splashScreen = document.getElementById('splash-screen');
+        if (splashScreen) {
+            // Apply initial animations
+            document.body.style.overflow = 'hidden'; // Prevent scrolling during splash screen
+            
+            // The splash screen will be hidden by CSS animation, but we'll remove it from DOM after animation completes
+            setTimeout(function() {
+                splashScreen.remove();
+                document.body.style.overflow = ''; // Restore scrolling
+            }, 3000); // 3 seconds to ensure animation has completed
+        }
+    }, 100);
+
+    // Rest of the site initialization code goes here
+    // ...
+});
+
 /**
  * Datash - Cyberpunk Theme
  * Main JavaScript

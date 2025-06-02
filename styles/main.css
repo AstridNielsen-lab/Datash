@@ -1,3 +1,76 @@
+/* Contribution Section Styles */
+.footer-contribute {
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid #00eeff;
+    border-radius: 5px;
+    margin: 20px 0;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 238, 255, 0.3);
+}
+
+.contribute-content {
+    text-align: center;
+}
+
+.contribute-content h3 {
+    color: #00eeff;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px rgba(0, 238, 255, 0.7);
+}
+
+.contribute-content p {
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.donation-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.donation-method {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    border-left: 3px solid #00eeff;
+}
+
+.donation-type {
+    color: #00eeff;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.donation-address {
+    color: #ffffff;
+    font-family: monospace;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+    border-radius: 3px;
+    overflow-wrap: break-word;
+}
+
+@media (min-width: 768px) {
+    .donation-method {
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .donation-type {
+        width: 100px;
+        margin-bottom: 0;
+        margin-right: 10px;
+    }
+    
+    .donation-address {
+        flex: 1;
+    }
+}
+
 /* 
  * Datash - Cyberpunk Theme
  * Main Stylesheet
