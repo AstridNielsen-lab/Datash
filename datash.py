@@ -4,6 +4,11 @@ Datash - An intelligent terminal assistant for programmers.
 
 This module serves as the main entry point for the Datash application,
 providing an interactive shell interface for interacting with the assistant.
+
+Developer: Dev Full Stack Julio Campos Machado
+Company: Like Look Solutions
+Website: https://likelook.wixsite.com/solutions
+Phone: +55 11 3680-8030
 """
 
 import os
@@ -153,6 +158,18 @@ def display_welcome_message():
         "Type [bold]help[/bold] for a list of commands or [bold]exit[/bold] to quit.",
         title="Welcome",
         border_style="blue",
+        box=box.ROUNDED,
+        padding=(1, 2),
+    ))
+    
+    # Display developer and company information
+    console.print(Panel.fit(
+        "[bold]Developer:[/bold] Dev Full Stack Julio Campos Machado\n"
+        "[bold]•[/bold] [bold]Company:[/bold] Like Look Solutions\n"
+        "[bold]•[/bold] [bold]Website:[/bold] https://likelook.wixsite.com/solutions\n"
+        "[bold]•[/bold] [bold]Phone:[/bold] +55 11 3680-8030",
+        title="Developer Information",
+        border_style="green",
         box=box.ROUNDED,
         padding=(1, 2),
     ))
