@@ -10,9 +10,8 @@
 
 Datash is a powerful terminal-based assistant that helps programmers interact with databases, manipulate data, execute shell commands, and manage Git repositories - all with intelligent suggestions and autocompletion powered by Google's Gemini API.
 
-<p align="center">
-  <img src="https://via.placeholder.com/800x400?text=Datash+Screenshot" alt="Datash Screenshot" width="600">
-</p>
+![image](https://github.com/user-attachments/assets/4e084d77-c059-4260-83c8-426ccbea485e)
+
 
 ## ✨ Features
 
