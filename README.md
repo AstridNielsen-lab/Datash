@@ -311,6 +311,7 @@ Your donations help educate new developers in technology!
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+https://github.com/AstridNielsen-lab/Datash
 
 ## 👨‍💻 Founder & CTO
 
@@ -327,6 +328,7 @@ Full Stack Developer & CTO at Like Look Solutions
 - **Like Look Solutions**
 - **Website**: [https://likelook.wixsite.com/solutions](https://likelook.wixsite.com/solutions)
 - **Facebook**: [likelooksolutionsti](https://www.facebook.com/likelooksolutionsti/)
+- **Code**: [https://github.com/AstridNielsen-lab/Datash](https://github.com/AstridNielsen-lab/Datash)
 
 ## 🙏 Acknowledgements
 
@@ -336,5 +338,5 @@ Full Stack Developer & CTO at Like Look Solutions
 ---
 
 <p align="center">
-  Made with ❤️ by the Datash team
+  Made with ❤️ by the Datash team Julio Campos Machado
 </p>
